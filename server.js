@@ -23,21 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-f
 app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 
-// Import the Recipe model
-var recipe = require("./app/models/Recipe.js");
-
-// Post a test recipe using the imported model
-var testRecipe = new recipe({ name: "Test2" });
-testRecipe.save(function (err) {
-	if (err) {
-		console.log("Unsuccessful put");
-		return handleError(err);
-	} else {
-		// saved!
-		console.log("Successful put");
-	}
-})
-
 // routes ==================================================
 require('./app/routes')(app); // pass our application into our routes
 

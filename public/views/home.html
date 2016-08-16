@@ -1,4 +1,49 @@
-<div class="jumbotron text-center">
-	<h1>Recipe List</h1>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">RecipeMaster</a>
+            <a class="navbar-brand" href="/addRecipe">Add Recipe</a>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
 
-	<!--<p>{{ tagline }}</p>-->
+<div class="login-container">
+    <div class="row">
+        <div class="span12">
+            <div class="" id="loginModal">
+                <div class="modal-body">
+                    <div class="well">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="login" data-toggle="tab">Login</a></li>
+                            <li><a href="register" data-toggle="tab">Register</a></li>
+                        </ul>
+                        <form>
+                            <br>
+                            <label for="userEmail">Email Address</label>
+                            <input type="email" class="form-control" id="userEmail" ng-model="user.email">
+                            <br>
+                            <label for="userPassword">Password</label>
+                            <input type="password" class="form-control" id="userPassword" ng-model="user.password">
+                            <br>
+                            <p class="error-msg">{{loginError}}</p>
+                            <button type="submit" class="btn btn-success" ng-click="login(user)"> Login </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

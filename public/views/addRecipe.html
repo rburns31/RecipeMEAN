@@ -1,5 +1,54 @@
-<div class="jumbotron text-center">
-	<h1>Add Recipe</h1>
+<!-- Navigation -->
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">RecipeMaster</a>
+            	<a class="navbar-brand" href="/addRecipe">Add Recipe</a>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
 
-	<!--<p>{{ tagline }}</p>-->
+    <div class="login-container">
+        <div class="row">
+            <div class="span12">
+                <div class="" id="loginModal">
+                    <div class="modal-body">
+                        <div class="well">
+                            <form>
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" ng-model="recipe.name">
+                                <br>
+                                <!--<label for="lname">Field2</label>
+                                <input type="text" class="form-control" id="lname" ng-model="user.lname">
+                                <br>
+                                <label for="registerEmail">Field3</label>
+                                <input type="email" class="form-control" id="registerEmail" ng-model="user.registerEmail">
+                                <br>
+                                <label for="registerPassword">Field4</label>
+                                <input type="password" class="form-control" id="registerPassword" ng-model="user.registerPassword">
+                                <br>-->
+                                
+
+                                <br>
+                                <p class="error-msg">{{addRecipeError}}</p>
+
+                                <button type="submit" class="btn btn-success" ng-click="postRecipe(recipe)"> Add Recipe </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
