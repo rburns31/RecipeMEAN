@@ -1,32 +1,20 @@
-# Node Todo App
+# MEAN Stack Single Page Application Starter
 
-A Node app built with MongoDB and Angular. For demonstration purposes and a tutorial.
-
-Node provides the RESTful API. Angular provides the frontend and accesses the API. MongoDB stores like a hoarder.
-
-## Requirements
-
-- [Node and npm](http://nodejs.org)
+This is a repo for a starter appliation for a Single Page MEAN Stack application. Just download and install and you have a good foundation for building application. 
 
 ## Installation
+1. Download the repository
+2. Install npm modules: `npm install`
+3. Install bower dependencies `bower install`
+4. Start up the server: `node server.js`
+5. View in browser at http://localhost:8080
 
-1. Clone the repository: `git clone git@github.com:scotch-io/node-todo`
-2. Install the application: `npm install`
-3. Start the server: `node server.js`
-4. View in browser at `http://localhost:8080`
+Use this starter kit to build any MEAN stack application you like.
 
-## Tutorial Series
+If you have any questions or requests, email us at [chris@scotch.io](mailto:chris@scotch.io) and we'll keep updating this to make it perfect.
 
-This repo corresponds to the Node Todo Tutorial Series on [scotch.io](http://scotch.io)
-
-Each branch represents a certain tutorial.
-- tut1-starter: [Creating a Single Page Todo App with Node and Angular](http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular)
-- tut2-services: Coming Soon
-- tut3-auth: Coming Soon
-- tut4-sockets: Coming Soon
-- tut5-redis: Coming Soon
-- tut6-organization: Coming Soon
-
-Happy Todo-ing!
-
-![Todo-aholic](http://i.imgur.com/ikyqgrn.png)
+## Future Additions
+- CRUD examples
+- Development and Production Environments
+- Link examples
+- Single Page AngularJS Animations
