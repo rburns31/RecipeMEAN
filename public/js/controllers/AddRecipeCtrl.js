@@ -2,7 +2,7 @@ angular.module('AddRecipeCtrl', []).controller('AddRecipeController', function($
 
     // Add the recipe
     $scope.postRecipe = function(recipe) {
-    	if (recipe.name == null || recipe.name.equals("")) {
+    	if (recipe.name == null || recipe.name == "") {
     		$scope.addRecipeError = "Please enter a name for this recipe";
     		return;
     	}
