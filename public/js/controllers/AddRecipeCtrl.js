@@ -2,6 +2,10 @@ angular.module('AddRecipeCtrl', []).controller('AddRecipeController', function($
 
     // Add the recipe
     $scope.postRecipe = function(recipe) {
+    	if (recipe.name == null) {
+    		$scope.addRecipeError = "Please enter a name for this recipe";
+    		return;
+    	}
         //alert(recipe.name);
         $http.post('/postRecipe', {
         	name: recipe.name,
