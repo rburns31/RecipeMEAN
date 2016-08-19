@@ -1,10 +1,21 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope, $http) {
+angular.module('MainCtrl', []).controller('MainController', function($scope, $http, $location) {
 
-	//$scope.tagline = 'To the moon and back!';
-
-    $http.get('/getAllRecipes').
+	// Populate the recipes list from the database
+    $http.get('/getRecipes').
         success(function(data, status) {
-            //alert("test");
+            $scope.recipes = data;
         });
+
+    $scope.addRecipe = function() {
+    	$location.url('/addRecipe');
+    };
+
+	/**$scope.deleteRecipe(recipe, $index)
+
+	$scope.recipeSelected(recipe.name)
+
+	$scope.showRemoveRecipe()
+
+	$scope.hideRemoveRecipe()*/
 
 });

@@ -12,10 +12,11 @@ var recipeSchema = new Schema (
   	dateModified: Date,
   	lastMadeOn: Date,
   	recipePic: String,
-  	pic: String,
+  	foodPic: String,
   	meal: String,
   	tags: [String],
-  	time: Number,
+  	prepTime: Number,
+    cookTime: Number,
   	addedBy: String,
   	instructions: String,
   	rating: Number

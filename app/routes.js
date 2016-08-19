@@ -5,9 +5,19 @@ module.exports = function(app) {
 
 	// server routes ===========================================================
 	// handle things like api calls and authentication routes
-	app.get('/getAllRecipes', function (req, res) {
+	app.get('/getRecipes', function (req, res) {
         console.log("Picked up GET request from MainCtrl.js");
-        res.send("finished")
+        var response;
+        recipeModel.find({ }, function (err, recipes) {
+  			if (err) {
+  				console.log("Unsuccessful get");
+  				return handleError(err);
+  			}
+  				console.log("Successful get");
+  				response = recipes;
+  				console.log(response);
+        		res.json(response);
+			})
     });
 
     app.post('/postRecipe', function (req, res) {
@@ -25,7 +35,7 @@ module.exports = function(app) {
 		})
 
         console.log(req.body);
-        res.send("finished")
+        res.send("finished");
     });
 
 	// frontend routes =========================================================

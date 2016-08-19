@@ -9,7 +9,6 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">RecipeMaster</a>
-            <a class="navbar-brand" href="/addRecipe">Add Recipe</a>
         </div>
     </div>
 </nav>
@@ -18,32 +17,46 @@
 <br>
 <br>
 
-<div class="login-container">
+<div class="recipeList-container">
     <div class="row">
-        <div class="span12">
-            <div class="" id="loginModal">
-                <div class="modal-body">
-                    <div class="well">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="login" data-toggle="tab">Login</a></li>
-                            <li><a href="register" data-toggle="tab">Register</a></li>
-                        </ul>
-                        <form>
+        <div class="col-lg-8 col-lg-offset-2">
+        	<div class="well"> <!-- Adds a rounded gray border to the container -->
+        		<div class="panel panel-default">
+        			<div class="panel-heading">
+        				<h3 class="panel-title"><i class="fa fa-users"></i> My Recipes </h3>
+        			</div>
+
+        			<div class="panel-body">
+						<div class="list-group">
+
+							<span ng-repeat="recipe in recipes">
+                                <button class="btn btn-danger pull-right" id="deleteTeamButton" ng-click="removeTeam(team, $index)"> Delete </button>
+                                <a href="#" class="list-group-item" id="coachTeamListItem" ng-click="teamSelected(team.team_name)" >
+    								{{recipe.name}}         
+                                </a>
+                            </span>
+
                             <br>
-                            <label for="userEmail">Email Address</label>
-                            <input type="email" class="form-control" id="userEmail" ng-model="user.email">
-                            <br>
-                            <label for="userPassword">Password</label>
-                            <input type="password" class="form-control" id="userPassword" ng-model="user.password">
-                            <br>
-                            <p class="error-msg">{{loginError}}</p>
-                            <button type="submit" class="btn btn-success" ng-click="login(user)"> Login </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+                            <div class='wrapper text-center'>
+
+                            	<button id="addRecipeButton" class="btn btn-default" ng-click="addRecipe()"> Add Recipe </button>
+
+                                <span ng-if="recipes.length > 0">
+                                    <button id="removeRecipeButton" class="btn btn-default" onClick="showRemoveRecipe()"> Edit Recipes </button>
+                                    <button id="removeRecipeDone" class="btn btn-default" onClick="hideRemoveRecipe()"> Done </button>
+                                </span>
+
+                                <span ng-if="recipes.length == 0">
+                                    <p> No recipes to display </p>
+                                </span>
+
+                            </div>
+
+						</div>
+        			</div>
+        		</div>
+        	</div>
         </div>
     </div>
-</div>
-
 </div>
