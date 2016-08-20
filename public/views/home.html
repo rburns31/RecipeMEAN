@@ -30,8 +30,8 @@
 						<div class="list-group">
 
 							<span ng-repeat="recipe in recipes">
-                                <button class="btn btn-danger pull-right" id="deleteTeamButton" ng-click="removeTeam(team, $index)"> Delete </button>
-                                <a href="#" class="list-group-item" id="coachTeamListItem" ng-click="teamSelected(team.team_name)" >
+                                <button class="btn btn-danger pull-right" id="deleteRecipeButton" ng-click="removeRecipe(recipe, $index)"> Delete </button>
+                                <a href="#" class="list-group-item" id="recipeListItem" ng-click="recipeSelected(recipe.name)" >
     								{{recipe.name}}         
                                 </a>
                             </span>

@@ -1,4 +1,4 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope, $http, $location) {
+angular.module('MainCtrl', ['ngDialog']).controller('MainController', function($scope, $http, $location, ngDialog) {
 
 	// Populate the recipes list from the database
     $http.get('/getRecipes').
@@ -10,9 +10,17 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
     	$location.url('/addRecipe');
     };
 
-	/**$scope.deleteRecipe(recipe, $index)
+	$scope.recipeSelected = function(recipeName) {
+		ngDialog.open({
+            template: 'views/RecipeDetailsPopup.html',
+            scope: $scope,
+            className: 'ngdialog-theme-default'
+        });
+	};
 
-	$scope.recipeSelected(recipe.name)
+
+
+	/**$scope.deleteRecipe(recipe, $index)
 
 	$scope.showRemoveRecipe()
 
