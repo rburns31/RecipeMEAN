@@ -3,3 +3,4 @@ bower_components
 .settings
 .project
 recipes.pem
+public/libs
