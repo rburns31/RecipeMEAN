@@ -1,0 +1,48 @@
+<div class="col-lg-8 col-lg-offset-2">
+    <div class="well"> <!-- Adds a rounded gray border to the container -->
+        <form>
+            <span ng-if="recipe.hasRecipePicture === true">
+                <img ng-src="{{recipe.recipePicture}}" style="width: 100px; height: 100px;" class="img-responsive img-rounded" alt="Recipe Picture">
+            </span>
+            <!-- <span ng-if="recipe.hasRecipePicture === false">
+                <img src="../pictures/graham.jpg" style="width: 100px; height: 100px;" class="img-responsive img-rounded" alt="Recipe Picture">
+            </span> -->
+
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" ng-model="recipe.name" value="{{recipe.name}}">
+            <br>
+            <label for="foodPic">Food Picture</label>
+            <input type="file" class="form-control" id="foodPic" ng-model="recipe.foodPic" value="{{recipe.foodPic}}">
+            <br>
+            <label for="recipePic">Recipe Picture</label>
+            <input type="file" class="form-control" id="recipePic" ng-model="recipe.recipePic" value="{{recipe.recipePic}}">
+            <br>
+            <label for="ingredients">Ingredients</label>
+            <input type="text" class="form-control" id="ingredients" ng-model="recipe.ingredients" value="{{recipe.ingredients}}">
+            <br>
+            <label for="instructions">Instructions</label>
+            <input type="text" class="form-control" id="instructions" ng-model="recipe.instructions" value="{{recipe.instructions}}">
+            <br>
+            <label for="meal">Meal</label>
+            <input type="text" class="form-control" id="meal" ng-model="recipe.meal" value="{{recipe.meal}}">
+            <br>
+            <label for="prepTime">Prep Time</label>
+            <input type="number" class="form-control" id="prepTime" ng-model="recipe.prepTime" value="{{recipe.prepTime}}">
+            <br>
+            <label for="cookTime">Cook Time</label>
+            <input type="number" class="form-control" id="cookTime" ng-model="recipe.cookTime" value="{{recipe.cookTime}}">
+            <br>
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" id="rating" ng-model="recipe.rating" value="{{recipe.rating}}">
+            <br>
+            <label for="tags">Tags</label>
+            <input type="text" class="form-control" id="tags" ng-model="recipe.tags" value="{{recipe.tags}}">
+            <br>
+
+            <br>
+            <p class="error-msg">{{addRecipeError}}</p>
+
+            <button type="submit" class="btn btn-success" ng-click="postRecipe(recipe)">Save Changes</button>
+        </form>
+    </div>
+</div>

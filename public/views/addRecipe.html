@@ -1,64 +1,56 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">RecipeMaster</a>
-        </div>
-    </div>
-</nav>
-<br>
-<br>
-<br>
-<br>
+<div class="col-lg-8 col-lg-offset-2">
+    <div class="well"> <!-- Adds a rounded gray border to the container -->
+        <form>
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" ng-model="recipe.name">
+            <br>
+            
+            
+            <label for="foodPic">Food Picture</label>
+            <!--<input type="file" class="form-control" id="foodPic" ng-model="recipe.foodPic">-->
+            <button type="button" class="btn btn-default" ng-click="upload()">Upload<span class="caret"></span></button>
+            <a href="{{recipePic}}" class="thumbnail">
+                <img src="{{recipe.recipePic}}">
+            </a>
+            <br>
+            
+            
+            <label for="recipePic">Recipe Picture</label>
+            <input type="file" class="form-control" id="recipePic" ng-model="recipe.recipePic">
+            <br>
+            <label for="ingredients">Ingredients</label>
+            <input type="text" class="form-control" id="ingredients" ng-model="recipe.ingredients">
+            <br>
+            <label for="instructions">Instructions</label>
+            <input type="text" class="form-control" id="instructions" ng-model="recipe.instructions">
+            <br>
+            <label for="meal">Meal</label>
+            <input type="text" class="form-control" id="meal" ng-model="recipe.meal">
+            <br>
+            <label for="prepTime">Prep Time</label>
+            <input type="number" class="form-control" id="prepTime" ng-model="recipe.prepTime">
+            <br>
+            <label for="cookTime">Cook Time</label>
+            <input type="number" class="form-control" id="cookTime" ng-model="recipe.cookTime">
+            <br>
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" id="rating" ng-model="recipe.rating">
+            <br>
+            <label for="tags">Tags</label>
+            <input type="text" class="form-control" id="tags" ng-model="recipe.tags">
+            <br>
 
-<div class="addRecipe-container">
-    <div class="row">
-    	<div class="col-lg-8 col-lg-offset-2">
-            <div class="well"> <!-- Adds a rounded gray border to the container -->
-            	<form>
-            		<label for="name">Name</label>
-            		<input type="text" class="form-control" id="name" ng-model="recipe.name">
-            		<br>
-            		<label for="foodPic">Food Picture</label>
-            		<input type="file" class="form-control" id="foodPic" ng-model="recipe.foodPic">
-            		<br>
-            		<label for="recipePic">Recipe Picture</label>
-            		<input type="file" class="form-control" id="recipePic" ng-model="recipe.recipePic">
-            		<br>
-            		<label for="ingredients">Ingredients</label>
-            		<input type="text" class="form-control" id="ingredients" ng-model="recipe.ingredients">
-            		<br>
-            		<label for="instructions">Instructions</label>
-            		<input type="text" class="form-control" id="instructions" ng-model="recipe.instructions">
-            		<br>
-            		<label for="meal">Meal</label>
-            		<input type="text" class="form-control" id="meal" ng-model="recipe.meal">
-            		<br>
-            		<label for="prepTime">Prep Time</label>
-            		<input type="number" class="form-control" id="prepTime" ng-model="recipe.prepTime">
-            		<br>
-            		<label for="cookTime">Cook Time</label>
-            		<input type="number" class="form-control" id="cookTime" ng-model="recipe.cookTime">
-            		<br>
-            		<label for="rating">Rating</label>
-            		<input type="number" class="form-control" id="rating" ng-model="recipe.rating">
-            		<br>
-            		<label for="tags">Tags</label>
-            		<input type="text" class="form-control" id="tags" ng-model="recipe.tags">
-            		<br>
+            <br>
+            <p class="error-msg">{{addRecipeError}}</p>
 
-            		<br>
-            		<p class="error-msg">{{addRecipeError}}</p>
-
-            		<button type="submit" class="btn btn-success" ng-click="postRecipe(recipe)"> Add Recipe </button>
-            	</form>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-success" ng-click="postRecipe(recipe)">Add Recipe</button>
+            
+            
+                
+                
+            
+            
+            
+        </form>
     </div>
 </div>

@@ -1,47 +1,54 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<base href="/">
+    <head>
+        <meta charset="UTF-8">
+        <base href="/">
 
-	<title>RecipeMaster</title>
+        <title>RecipeMaster</title>
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+        <!-- AWS JS SDK -->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+        
+        <!-- AngularJS -->
+        <script type="application/javascript" src="libs/angular/angular.js"></script>
+        <script type="application/javascript" src="libs/angular-route/angular-route.js"></script>
+        
+        <!-- File Stack (for uploading images) -->
+        <script type="application/javascript" src="libs/filepicker-js/filepicker.js"></script>
+        <script type="application/javascript" src="libs/angular-filepicker/dist/angular_filepicker.js"></script>
 
-	<!-- JS -->
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
-	<!-- ANGULAR CUSTOM -->
-	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/AddRecipeCtrl.js"></script>
-	<script src="js/appRoutes.js"></script>
-	<script src="js/app.js"></script>
+        <!-- ANGULAR CUSTOM -->
+        <script src="js/controllers/MainCtrl.js"></script>
+        <script src="js/controllers/AddRecipeCtrl.js"></script>
+        <script src="js/appRoutes.js"></script>
+        <script src="js/app.js"></script>
 
-	<!-- ngDialog -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css" rel="stylesheet">
-	<link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog-theme-default.min.css" rel="stylesheet">
-</head>
+        <!-- ngDialog -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog-theme-default.min.css" rel="stylesheet">
+    </head>
 
-<body ng-app="sampleApp" ng-controller="AddRecipeController">
-<!--<div class="container">-->
-	
-	<!-- HEADER -->
-	<!--<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Home</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/addRecipe">Add Recipe</a></li>
-		</ul>
-	</nav>-->
+    <body ng-app="sampleApp" ng-controller="AddRecipeController">
 
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view> </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">RecipeMaster</a>
+                    <a class="navbar-brand" href="/addRecipe">Add Recipe</a>
+                </div>
+            </div>
+        </nav>
 
-</div>
-</body>
+        <!-- ANGULAR DYNAMIC CONTENT -->
+        <div ng-view style="padding-top:50px;"> </div>
+        
+        <input type="filepicker" data-fp-apikey="ADRorBCiRIu3kFy8E7uvRz" onchange="console.log(event.fpfile)">
+
+    </body>
 </html>

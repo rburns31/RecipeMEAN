@@ -1,62 +1,14 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">RecipeMaster</a>
+<div class="col-lg-8 col-lg-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">My Recipes</h3>
         </div>
-    </div>
-</nav>
-<br>
-<br>
-<br>
-<br>
 
-<div class="recipeList-container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-        	<div class="well"> <!-- Adds a rounded gray border to the container -->
-        		<div class="panel panel-default">
-        			<div class="panel-heading">
-        				<h3 class="panel-title"><i class="fa fa-users"></i> My Recipes </h3>
-        			</div>
-
-        			<div class="panel-body">
-						<div class="list-group">
-
-							<span ng-repeat="recipe in recipes">
-                                <button class="btn btn-danger pull-right" id="deleteRecipeButton" ng-click="removeRecipe(recipe, $index)"> Delete </button>
-                                <a href="#" class="list-group-item" id="recipeListItem" ng-click="recipeSelected(recipe.name)" >
-    								{{recipe.name}}         
-                                </a>
-                            </span>
-
-                            <br>
-
-                            <div class='wrapper text-center'>
-
-                            	<button id="addRecipeButton" class="btn btn-default" ng-click="addRecipe()"> Add Recipe </button>
-
-                                <span ng-if="recipes.length > 0">
-                                    <button id="removeRecipeButton" class="btn btn-default" onClick="showRemoveRecipe()"> Edit Recipes </button>
-                                    <button id="removeRecipeDone" class="btn btn-default" onClick="hideRemoveRecipe()"> Done </button>
-                                </span>
-
-                                <span ng-if="recipes.length == 0">
-                                    <p> No recipes to display </p>
-                                </span>
-
-                            </div>
-
-						</div>
-        			</div>
-        		</div>
-        	</div>
+        <div class="panel-body">
+            <span ng-repeat="recipe in recipes">
+                <a href="#" class="list-group-item" id="recipeListItem" ng-click="recipeSelected(recipe)">{{recipe.name}}</a>
+                <!--<a href="/recipeView" class="list-group-item" id="recipeListItem">{{recipe.name}}</a>-->
+            </span>
         </div>
     </div>
 </div>

@@ -1,7 +1,9 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'AddRecipeCtrl']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'AddRecipeCtrl', 'angular-filepicker']);
 
 // Example of how to set default values for all dialogs
-app.config(['ngDialogProvider', function (ngDialogProvider) {
+app.config(['ngDialogProvider', function (ngDialogProvider, filepickerProvider) {
+    filepickerProvider.setKey('ADRorBCiRIu3kFy8E7uvRz');
+    
     ngDialogProvider.setDefaults({
         className: 'ngdialog-theme-default',
         plain: false,

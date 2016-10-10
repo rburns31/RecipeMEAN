@@ -4,8 +4,19 @@ var app            = express();
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var morgan         = require('morgan');
 
 // configuration ===========================================
+var http = require('http').Server(app);
+/**var io = require('socket.io')(http);
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});*/
 	
 // Import database URL
 var db = require('./config/db');
